@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body 
+{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url("https://images.unsplash.com/photo-1635898445837-65c066642d81?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60") no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.top1{
+       text-align: center;
+       letter-spacing: .5px;
+       word-spacing: 2px;
+       text-shadow: 1px 1px 1px rgb(109, 190, 214);
+   }
+/* Full-width input fields */
+input[type=text], input[type=number] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #2a86b1;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+/* Modal Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <div class="top1">
+        <h3>Wanderer.com</h3>
+        <h1>Welcome To India</h1>
+        <button onclick="document.getElementById('myid1').style.display='block'" style="width:auto;">LOGIN</button>
+        <button onclick="document.getElementById('myid2').style.display='block'" style="width:auto;">GUEST</button>
+      </div>
+<div id="myid1" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('myid1').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="data:image/jpeg;base64,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" alt="emoji" class="emoji">
+    </div>
+
+    <div class="container">
+      <label for="myname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="myname" required>
+
+      <label for="mobile"><b>Mobile Number</b></label>
+      <input type="number" placeholder="Enter Mobile Number" name="mobile" required>
+        
+      <button type="submit">Login</button>
+    </div>
+  </form>
+</div>
+
+<div id="myid2" class="modal">
+  <nav class="navbar">
+    <div class="logo">
+      <img src="C:\Users\Saaksha jadoun\Downloads\travel-tourism-illustration-with-resort-sightseeing-elements.zip" alt="wanderer.com">
+    </div>
+    <div class="menu">
+    <ul>
+        <li><a href = "adv.html" target="_blank">Adventures</a></li>
+        <li><a href = "jun.html" target="_blank">Jungle safari</a></li>
+        <li><a href = "hist.html" target="_blank">Historical Places</a></li>
+        <li><a href = "mailto:sarthakjadoun2004@gmail.com" target="_blank">Contact us</a></li>
+        </ul>
+    </div>
+        <div class= "search">
+            <input type= "search" name="search" id="search" placeholder = "search here">
+        </div>
+    </nav>
+
+<div class="body1">
+  <div class ="heading">
+    <h1>Travel securely with us</h1>
+    <br>
+    <p>On Wandere.com, you can tailor your trip from end-to-end by scouring suitable flights and making your
+       flight booking before proceeding with your hotel bookings. Wnderer’s vast hotel repository will see you
+       through this process seamlessly. Any intervening journey can be conveniently planned by searching up 
+       relevant train connectivity and making an IRCTC ticket booking. Look up well-researched holiday packages
+       , sift through cruise packages and finalise your entire trip on just one platform.</p>
+    <br><br>
+    <a href="#">Learn more</a>
+  </div>
+
+  <div class="tours">
+   <div class ="places">
+   <h2>Kashmir</h2>
+   <img src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a2FzaG1pcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" 
+   style="width: 250px; height: 200px; border-radius: 12px;">
+   <br><br>
+   <a href="#">Book now @Rs14999</a>
+   </div>
+
+   <div class="places">
+    <h2>Nanital</h2>
+    <img src="https://images.unsplash.com/photo-1610715936287-6c2ad208cdbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmFpbml0YWx8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" 
+    style="width: 250px; height: 200px; border-radius: 12px;">
+    <br><br>
+    <a href="#">Book now @Rs9999</a>
+   </div>
+
+   <div class ="places">
+    <h2>Manali</h2>
+    <img src="https://images.unsplash.com/photo-1600587670873-b1800a8729d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60" 
+    style="width: 250px; height: 200px;border-radius: 12px;">
+    <br><br>
+    <a href="#">Book now @Rs9999</a>
+   </div>
+
+   <div class ="places">
+    <h2>Kerala</h2>
+    <img src="https://media.istockphoto.com/photos/waterfall-in-the-western-ghats-india-picture-id1137754111?b=1&k=20&m=1137754111&s=170667a&w=0&h=BKiq3WSNCGTQ5HOVkc0HhNGocuojBDpYuRo9h15C1z8="
+    style="width: 250px; height: 200px;border-radius: 12px;">
+    <br><br>
+    <a href="#">Book now @Rs12999</a>
+   </div>
+   <div class ="places">
+    <h2>Varanasi</h2>
+    <img src="https://media.istockphoto.com/photos/hindu-sadhu-sitting-on-a-boat-overlooking-varanasi-city-architecture-picture-id1164329797?b=1&k=20&m=1164329797&s=170667a&w=0&h=imumbLuKLNy_mi6OaENu1wzUDV1GA7XMfWfER0OmXKc=" 
+    style="width: 250px; height: 200px;border-radius: 12px;">
+    <br><br>
+    <a href="#">Book now @Rs8999</a>
+   </div>
+
+   <div class ="places">
+    <h2>Thar,Rajasthan</h2>
+    <img src="https://media.istockphoto.com/photos/beautiful-view-of-the-sky-and-sand-dunes-picture-id157288338?b=1&k=20&m=157288338&s=170667a&w=0&h=NlGP2zWowOdTNbGpAIP9rWJCHxbPwzJkmCCRpQW469I=" 
+    style="width: 250px; height: 200px;border-radius: 12px;">
+    <br><br>
+    <a href="#">Book now @Rs12999</a>
+   </div>
+ </div>
+</div>
+<div class="footer">
+<a href="#">Copyrights</a>
+<a href="#">Terms and Aonditions</a>
+<a href="#">Cookies</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Complaints</a>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myid1');
+</script>
+<style>
+  .navbar{
+     width: 100%;
+     height: 100px;
+     background-color: rgb(14, 14, 12);
+     display:flex;
+     justify-content: space-around;
+     align-items: center;
+     border-radius: 15px;
+     font-weight: bold;
+     color: #000;
+  }
+  .menu ul{
+    display:flex;
+    align-items: center;
+  }
+  .menu ul li a{
+      text-decoration: none;
+      color:#42c114;
+      padding: 5px 12px;
+      letter-spacing: 2px;
+      font-size: 18px;
+  }
+  .menu ul li a:hover{
+      border-bottom: 4px solid #7c7676;
+      transition: 0.4%;
+  }
+  .search{
+      float: right;
+      color: white;
+      padding: 12px 75px;
+  }
+  .navbar input{
+      border: 2px solid black;
+      border-radius: 4px;
+      padding: 3px 17px;
+      width: 140px;
+  }
+  .body1{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .heading{
+    width: 30%;
+    text-align: center;
+    color: #fff;
+  }
+  .heading h1{
+    font-size: 40px;
+  }
+  .heading a{
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 45px;
+    padding: 14px 50px;
+    background-color: #fff;
+  }
+  .heading a:hover{
+    letter-spacing: 3px;
+    transition: 0.6s;
+  }
+  .tours{
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .places{
+    display: inline;
+    text-align: center;
+    border-radius: 12px;
+  }
+  .places h2{
+    color: red;
+    font-size: 35px;
+    letter-spacing: 3px;
+    border-radius: 1px;
+    padding: 10px 10px;
+    background-color: #000;
+  }
+  .places a{
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 12px;
+    padding: 12px 30px;
+    background-color: #fff;
+  }
+  .places a:hover{
+    background-color: #000;
+    letter-spacing: 3px;
+    transition: 00.6s;
+  }
+  .footer{
+    width:100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    text-align: 300px;
+  }
+  .footer a{
+    text-decoration: none;
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .footer a:hover{
+    text-decoration: underline;
+    transition: 0.6s;
+  }
+</style>
+</body>
+</html>
